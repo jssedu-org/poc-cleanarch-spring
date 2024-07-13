@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - develop
     paths:
       - 'ca-spring-multimodule/**'
       - '!ca-spring-multimodule/external/apis/docs/**'
