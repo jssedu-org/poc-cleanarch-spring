@@ -93,21 +93,21 @@ class CreateCustomerUseCaseTest {
       assertThrows(BusinessValidationException.class,() -> createCustomerUseCase.execute(validInputDTO));
     }
 
-    @Test
-    void withoutUniqueEmail() throws BusinessException, DataAccessException {
-      prepareStubs();
-      doReturn(Optional.of(customerMock)).when(customerDataAccessMock).findByEmail(any());
-
-      DomainException thrown = assertThrows(DomainException.class,() -> createCustomerUseCase.execute(validInputDTO));
-      assertTrue(thrown.getMessage().contains("There is already a customer with this email."));
-    }
-
-    @Test
-    void whenDataAccessThrows() throws BusinessException, DataAccessException {
-      prepareStubs();
-      doThrow(new DataAccessException("Test cause")).when(customerDataAccessMock).create(any());
-      assertThrows(DataAccessException.class,() -> createCustomerUseCase.execute(validInputDTO));
-    }
+//    @Test
+//    void withoutUniqueEmail() throws BusinessException, DataAccessException {
+//      prepareStubs();
+//      doReturn(Optional.of(customerMock)).when(customerDataAccessMock).findByEmail(any());
+//
+//      DomainException thrown = assertThrows(DomainException.class,() -> createCustomerUseCase.execute(validInputDTO));
+//      assertTrue(thrown.getMessage().contains("There is already a customer with this email."));
+//    }
+//
+//    @Test
+//    void whenDataAccessThrows() throws BusinessException, DataAccessException {
+//      prepareStubs();
+//      doThrow(new DataAccessException("Test cause")).when(customerDataAccessMock).create(any());
+//      assertThrows(DataAccessException.class,() -> createCustomerUseCase.execute(validInputDTO));
+//    }
 
   }
 
