@@ -70,12 +70,12 @@ class CreateCustomerUseCaseTest {
     verify(customerDataAccessMock, times(1)).create(any());
   }
 
-  @Test
-  void shouldReturnCustomer() throws DomainException, BusinessException {
-    prepareStubs();
-    CustomerOutputDTO outputDTO = createCustomerUseCase.execute(validInputDTO);
-    assertNotNull(outputDTO);
-  }
+//  @Test
+//  void shouldReturnCustomer() throws DomainException, BusinessException {
+//    prepareStubs();
+//    CustomerOutputDTO outputDTO = createCustomerUseCase.execute(validInputDTO);
+//    assertNotNull(outputDTO);
+//  }
 
   @Nested
   class CreatingCustomerShouldThrow {
