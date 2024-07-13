@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="4"?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>POC - Clean Architecture Spring Multi Module</title>
+<date>2022-10-29</date>
+<author>
+<personname>
+<firstname>Bruno</firstname>
+<surname>Tacca</surname>
+</personname>
+</author>
+<authorinitials>BT</authorinitials>
+</info>
+<preface>
+<title></title>
+<bridgehead xml:id="_api_guide_from_ca_spring_multimodule" renderas="sect2">API Guide from <link xl:href="https://github.com/brunotacca/poc_cleanarch_spring_multimodule">CA Spring Multimodule</link></bridgehead>
+</preface>
+<part xml:id="overview">
+<title>Overview</title>
+<chapter xml:id="overview-http-verbs">
+<title>HTTP verbs</title>
+<simpara>CA Spring Multimodule tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.</simpara>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="50*"/>
+<colspec colname="col_2" colwidth="50*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Verb</entry>
+<entry align="left" valign="top">Usage</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>GET</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>Used to retrieve a resource</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>POST</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>Used to create a new resource</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>PATCH</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>Used to update an existing resource, including partial updates</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>DELETE</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>Used to delete an existing resource</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<simpara>CA Spring Multimodule tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.</simpara>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="50*"/>
+<colspec colname="col_2" colwidth="50*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Status code</entry>
+<entry align="left" valign="top">Usage</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>200 OK</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The request completed successfully</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>201 Created</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>A new resource has been created successfully. The resource&#8217;s URI is available from the response&#8217;s <literal>Location</literal> header</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>204 No Content</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>An update to an existing resource has been applied successfully</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>400 Bad Request</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The request was malformed. The response body will include an error providing further information</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>404 Not Found</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The requested resource did not exist</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</chapter>
+<chapter xml:id="overview-hypermedia">
+<title>Hypermedia</title>
+<simpara>CA Spring Multimodule uses hypermedia and resources include links to other resources in their responses.
+Responses are in <link xl:href="http://stateless.co/hal_specification.html">Hypertext Application from resource to resource. Language (HAL)</link> format.
+Links can be found beneath the <literal>_links</literal> key.
+Users of the API should not create URIs themselves, instead they should use the above-described links to navigate</simpara>
+</chapter>
+</part>
+<part xml:id="resources">
+<title>Resources</title>
+<chapter xml:id="resources-index">
+<title>Index</title>
+<simpara>The index provides the entry point into the service.</simpara>
+<section xml:id="resources-index-access">
+<title>Accessing the index</title>
+<simpara>A <literal>GET</literal> request is used to access the index</simpara>
+<section xml:id="_request_structure">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/index/http-request.adoc[]</simpara>
+</section>
+<section xml:id="_example_response">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/index/http-response.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/index/response-fields.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/index/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="resources-index-links">
+<title>Links</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/index/links.adoc[]</simpara>
+</section>
+</section>
+</chapter>
+<chapter xml:id="resources-customers">
+<title>Customer REST Service</title>
+<simpara>The <literal>customers</literal> provides the entry point into the service.</simpara>
+<section xml:id="resources-customers-post">
+<title>(POST) Creating customers</title>
+<simpara>A <literal>POST</literal> request is used to access customer creation.</simpara>
+<section xml:id="_request_structure_2">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/request-fields.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_2">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/http-response.adoc[]</simpara>
+</section>
+<section xml:id="_response_headers">
+<title>Response headers</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/response-headers.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_2">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_links">
+<title>Links</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-create/links.adoc[]</simpara>
+</section>
+</section>
+<section xml:id="resources-customers-getbyid">
+<title>(GET) Retrieving customers by ID</title>
+<simpara>A <literal>GET</literal> request is used to get the customer by Id.</simpara>
+<section xml:id="_request_structure_3">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-getbyid/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-getbyid/path-parameters.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_3">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-getbyid/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_3">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-getbyid/http-response.adoc[]</simpara>
+</section>
+</section>
+<section xml:id="resources-customers-findbyname">
+<title>(GET) Finding customers by Name</title>
+<simpara>A <literal>GET</literal> request is also used to find customers by name.</simpara>
+<section xml:id="_request_structure_4">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-findbyname/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-findbyname/request-parameters.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_4">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-findbyname/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_response_structure">
+<title>Response structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-findbyname/response-fields.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_4">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-findbyname/http-response.adoc[]</simpara>
+</section>
+</section>
+<section xml:id="resources-customers-put">
+<title>(PUT) Updating customers</title>
+<simpara>A <literal>PUT</literal> request is used to access customer update.</simpara>
+<section xml:id="_request_structure_5">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/path-parameters.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/request-fields.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_5">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_5">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/http-response.adoc[]</simpara>
+</section>
+<section xml:id="_links_2">
+<title>Links</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-update/links.adoc[]</simpara>
+</section>
+</section>
+<section xml:id="resources-customers-patch-activate">
+<title>(PATCH) Activate customer</title>
+<simpara>A <literal>PATCH</literal> request can be used to activate a customer.</simpara>
+<section xml:id="_request_structure_6">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-activate/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-activate/path-parameters.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_6">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-activate/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_6">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-activate/http-response.adoc[]</simpara>
+</section>
+<section xml:id="_links_3">
+<title>Links</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-activate/links.adoc[]</simpara>
+</section>
+</section>
+<section xml:id="resources-customers-patch-deactivate">
+<title>(PATCH) Deactivate customer</title>
+<simpara>A <literal>PATCH</literal> request can be used to deactivate a customer.</simpara>
+<section xml:id="_request_structure_7">
+<title>Request structure</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-deactivate/http-request.adoc[]</simpara>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-deactivate/path-parameters.adoc[]</simpara>
+</section>
+<section xml:id="_curl_request_7">
+<title>CURL request</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-deactivate/curl-request.adoc[]</simpara>
+</section>
+<section xml:id="_example_response_7">
+<title>Example response</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-deactivate/http-response.adoc[]</simpara>
+</section>
+<section xml:id="_links_4">
+<title>Links</title>
+<simpara>Unresolved directive in api-guide.adoc - include::C:\Users\us-laptop\workspace\java\poc-cleanarch-spring\ca-spring-multimodule\external\apis\target/generated-snippets/customers-deactivate/links.adoc[]</simpara>
+</section>
+</section>
+</chapter>
+<bibliography xml:id="_references">
+<title>References</title>
+<bibliodiv>
+<bibliomixed>
+<bibliomisc>Baeldung. "Introduction to Spring REST Docs". Baeldung. May 29, 2022. Available at: <link xl:href="https://www.baeldung.com/spring-rest-docs">https://www.baeldung.com/spring-rest-docs</link>. Accessed Aug 14, 2022.</bibliomisc>
+</bibliomixed>
+<bibliomixed>
+<bibliomisc>Docs Spring. "Spring REST Docs". Wilkinson A., Bryant J. Jan 15, 2022. Available at: <link xl:href="https://docs.spring.io/spring-restdocs/docs/current/reference/html5/">https://docs.spring.io/spring-restdocs/docs/current/reference/html5/</link> Accessed Sep 02, 2022.</bibliomisc>
+</bibliomixed>
+</bibliodiv>
+</bibliography>
+</part>
+</book>
